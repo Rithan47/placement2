@@ -1,69 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Stone Paper Scissors</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f0f2f5;
-      text-align: center;
-      padding: 50px;
-    }
-    h1 {
-      color: #333;
-    }
-    .choices {
-      margin: 20px;
-    }
-    button {
-      padding: 15px 25px;
-      margin: 10px;
-      font-size: 18px;
-      cursor: pointer;
-    }
-    #result {
-      margin-top: 30px;
-      font-size: 22px;
-      color: #0077cc;
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Simple Web Page</title>
+
+    <style>
+        /* ===== Reset ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* ===== Body ===== */
+        body {
+            background: #f5f7fa;
+            color: #333;
+        }
+
+        /* ===== Navbar ===== */
+        nav {
+            background: #2c3e50;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+
+        nav h2 {
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li {
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        nav ul li:hover {
+            color: #00d9ff;
+        }
+
+        /* ===== Hero Section ===== */
+        .hero {
+            text-align: center;
+            padding: 70px 20px;
+            background: linear-gradient(120deg, #00d9ff, #0077ff);
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background: white;
+            color: #0077ff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #eee;
+        }
+
+        /* ===== Cards Section ===== */
+        .cards {
+            display: flex;
+            gap: 20px;
+            padding: 40px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: white;
+            width: 250px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            color: #0077ff;
+        }
+
+        /* ===== Footer ===== */
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #2c3e50;
+            color: white;
+            margin-top: 30px;
+        }
+    </style>
 </head>
+
 <body>
-  <h1>Stone Paper Scissors Game</h1>
-  <div class="choices">
-    <button onclick="play('Stone')">🪨 Stone</button>
-    <button onclick="play('Paper')">📄 Paper</button>
-    <button onclick="play('Scissors')">✂️ Scissors</button>
-  </div>
-  <div id="result"></div>
 
-  <script>
-    function play(playerChoice) {
-      const choices = ['Stone', 'Paper', 'Scissors'];
-      const computerChoice = choices[Math.floor(Math.random() * 3)];
+    <!-- Navbar -->
+    <nav>
+        <h2>MyWebsite</h2>
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Services</li>
+            <li>Contact</li>
+        </ul>
+    </nav>
 
-      let result = '';
-      if (playerChoice === computerChoice) {
-        result = "It's a Draw! 🤝";
-      } else if (
-        (playerChoice === 'Stone' && computerChoice === 'Scissors') ||
-        (playerChoice === 'Paper' && computerChoice === 'Stone') ||
-        (playerChoice === 'Scissors' && computerChoice === 'Paper')
-      ) {
-        result = `You Win! 🎉 ${playerChoice} beats ${computerChoice}`;
-      } else {
-        result = `You Lose! 😢 ${computerChoice} beats ${playerChoice}`;
-      }
+    <!-- Hero -->
+    <section class="hero">
+        <h1>Welcome to My Website</h1>
+        <p>Learning HTML & CSS is easy and fun 🚀</p>
+        <button class="btn">Get Started</button>
+    </section>
 
-      document.getElementById('result').innerHTML = `
-        You chose <strong>${playerChoice}</strong><br>
-        Computer chose <strong>${computerChoice}</strong><br>
-        <strong>${result}</strong>
-      `;
-    }
-  </script>
+    <!-- Cards -->
+    <section class="cards">
+        <div class="card">
+            <h3>HTML</h3>
+            <p>Structure of the webpage</p>
+        </div>
+
+        <div class="card">
+            <h3>CSS</h3>
+            <p>Style your webpage beautifully</p>
+        </div>
+
+        <div class="card">
+            <h3>JavaScript</h3>
+            <p>Add interactivity to pages</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        © 2026 My Website | All Rights Reserved
+    </footer>
+
 </body>
 </html>
-8
